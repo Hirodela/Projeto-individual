@@ -1,13 +1,13 @@
 {
-  "name": "web-data-viz",
+  "name": "minha-medi-sina",
   "version": "1.0.0",
-  "description": "",
+  "description": "Minha Medi Sina - Cantinho de posts, curtidas, comentários e lembranças para a Giovana (Padrão Web-Data-Viz SPTech)",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon --exec node app.js"
+    "dev": "nodemon app.js"
   },
-  "author": "Feito pelos desenvolvedores @ São Paulo Tech School / Bandtec Digital School",
+  "author": "Feito com amor para a Giovana",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",

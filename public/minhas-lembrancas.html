@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meus Posts · Minha Medi Sina ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/app-extra.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <a class="logo" href="index.html">Minha Medi Sina<small>Para Giovana ♡</small></a>
+      <a class="item" href="dashboard.html">Visão geral & Métricas</a>
+      <a class="item" href="publicacoes.html">Feed de Posts</a>
+      <a class="item ativo" href="minhas-lembrancas.html">Meus Posts</a>
+      <a class="item" href="nova-lembranca.html">Criar publicação</a>
+      <a class="item" href="perfil.html">Meu perfil</a>
+      <div class="nota">Um espaço para lembrar do que faz o coração sorrir.</div>
+      <a class="item" href="index.html">Sair</a>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">Nosso cantinho</p>
+          <span class="muted">Gerencie os seus posts, curtidas e comentários.</span>
+        </div>
+        <div><span class="nome-usuario-logado">Giovana ♡</span> <span class="avatar">♡</span></div>
+      </div>
+      <div class="page-title">
+        <div>
+          <h1>Meus Posts & Lembranças</h1>
+          <p>Suas histórias publicadas, organizadas do seu jeito.</p>
+        </div>
+        <a class="btn btn-primary" href="nova-lembranca.html">+ Criar Novo Post</a>
+      </div>
+      <div class="field">
+        <label for="b">Buscar nos meus posts</label>
+        <input id="b" type="text" placeholder="Título, mensagem ou categoria..." />
+      </div>
+      <div class="chips">
+        <button class="chip ativo" type="button" data-vis-filter="todas">Todos</button>
+        <button class="chip" type="button" data-vis-filter="publicas">Públicos</button>
+        <button class="chip" type="button" data-vis-filter="privadas">Privados</button>
+        <span class="muted" data-memory-count></span>
+      </div>
+      <h2>Suas Publicações</h2>
+      <div id="memory-list" class="grid memory-list"></div>
+
+      <h2 style="margin-top: 36px;">Atalhos Rápidos</h2>
+      <div class="atalhos">
+        <a href="nova-lembranca.html">+ Criar novo post<br /><span class="muted">Guarde um novo momento</span></a>
+        <a href="publicacoes.html">Ver Feed Completo<br /><span class="muted">Curta e comente os posts</span></a>
+        <a href="perfil.html">Editar meu perfil<br /><span class="muted">Atualize seus dados</span></a>
+      </div>
+      <p class="muted" style="margin-top: 32px">Minha Medi Sina · Feito com amor para a Giovana ♡</p>
+    </main>
+  </div>
+  <script src="js/sessao.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu perfil · Minha Medi Sina ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/app-extra.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <a class="logo" href="index.html">Minha Medi Sina<small>Para Giovana ♡</small></a>
+      <a class="item" href="dashboard.html">Visão geral & Métricas</a>
+      <a class="item" href="publicacoes.html">Feed de Posts</a>
+      <a class="item" href="minhas-lembrancas.html">Meus Posts</a>
+      <a class="item" href="nova-lembranca.html">Criar publicação</a>
+      <a class="item ativo" href="perfil.html">Meu perfil</a>
+      <div class="nota">Um espaço para lembrar do que faz o coração sorrir.</div>
+      <a class="item" href="index.html">Sair</a>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">Nosso cantinho</p>
+          <span class="muted">Atualize os seus dados de perfil.</span>
+        </div>
+        <div><span class="nome-usuario-logado">Giovana ♡</span> <span class="avatar">♡</span></div>
+      </div>
+      <div class="page-title">
+        <div>
+          <h1>Meu Perfil</h1>
+          <p>Como o seu nome aparece nos posts e comentários do mural.</p>
+        </div>
+      </div>
+      <form class="box" id="profile-form" style="max-width:620px">
+        <div style="display:flex;gap:20px;align-items:center;margin-bottom:24px">
+          <span class="avatar avatar-usuario" style="width:72px;height:72px;font-size:26px;margin:0">♡</span>
+          <div>
+            <h3 class="nome-usuario-logado">Giovana ♡</h3>
+            <p class="hint">Participante do mural Minha Medi Sina</p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="n">Nome de exibição</label>
+          <input id="n" type="text" required>
+        </div>
+        <div class="field">
+          <label for="e">E-mail da conta</label>
+          <input id="e" type="email" required>
+        </div>
+        <p id="form-message" class="form-message" aria-live="polite"></p>
+        <div style="display:flex;gap:12px">
+          <button class="btn btn-primary" type="submit">Salvar alterações</button>
+          <a class="btn" href="dashboard.html">Voltar</a>
+        </div>
+      </form>
+      <p class="muted" style="margin-top:32px">Minha Medi Sina · Feito com amor para a Giovana ♡</p>
+    </main>
+  </div>
+  <script src="js/sessao.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

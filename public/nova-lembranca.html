@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criar Publicação · Minha Medi Sina ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/app-extra.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <a class="logo" href="index.html">Minha Medi Sina<small>Para Giovana ♡</small></a>
+      <a class="item" href="dashboard.html">Visão geral & Métricas</a>
+      <a class="item" href="publicacoes.html">Feed de Posts</a>
+      <a class="item" href="minhas-lembrancas.html">Meus Posts</a>
+      <a class="item ativo" href="nova-lembranca.html">Criar publicação</a>
+      <a class="item" href="perfil.html">Meu perfil</a>
+      <div class="nota">Um espaço para lembrar do que faz o coração sorrir.</div>
+      <a class="item" href="index.html">Sair</a>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">Nosso cantinho</p>
+          <span class="muted">Publique um novo post para a Giovana.</span>
+        </div>
+        <div><span class="nome-usuario-logado">Giovana ♡</span> <span class="avatar">♡</span></div>
+      </div>
+      <div class="page-title">
+        <div>
+          <h1>Criar Novo Post</h1>
+          <p>Guarde uma fotografia, declaração ou momento que merece ficar para sempre.</p>
+        </div>
+        <span class="tag">Mural da Giovana ♡</span>
+      </div>
+      <div class="form-wrap">
+        <form class="box" id="memory-form">
+          <p class="eyebrow" style="margin-bottom:16px">Detalhes do Post</p>
+          <div class="field">
+            <label for="t">Título do Post *</label>
+            <input id="t" type="text" required maxlength="120" placeholder="Dê um título especial a esse momento">
+          </div>
+          <div class="field">
+            <label for="d">Mensagem / Descrição *</label>
+            <textarea id="d" required placeholder="Escreva aqui a história desse dia ou uma mensagem carinhosa para a Giovana..."></textarea>
+            <p class="hint">Depois de publicado, todos poderão curtir ❤️ e comentar 💬 neste post.</p>
+          </div>
+          <div class="dois">
+            <div class="field">
+              <label for="dt">Data do Momento *</label>
+              <input id="dt" type="date" required>
+            </div>
+            <div class="field">
+              <label for="c">Categoria *</label>
+              <select id="c">
+                <option value="Fotografias">Fotografias</option>
+                <option value="Mensagens">Mensagens</option>
+                <option value="Datas especiais">Datas especiais</option>
+                <option value="Momentos engraçados">Momentos engraçados</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Fotografia do Post (opcional)</label>
+            <div class="upload">
+              <p>Escolha uma foto especial do computador ou telemóvel</p>
+              <button class="btn" type="button" style="margin:12px 0">Adicionar fotografia</button>
+              <p class="muted">JPG, PNG ou WEBP · até 5 MB</p>
+            </div>
+          </div>
+          <div class="field">
+            <label>Visibilidade do Post</label>
+            <div class="opcoes">
+              <label class="opcao"><input type="radio" name="v" checked> Público (Aparece no Feed)</label>
+              <label class="opcao"><input type="radio" name="v"> Privado (Só para mim)</label>
+            </div>
+          </div>
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+          <div style="display:flex;gap:12px">
+            <button class="btn btn-primary" type="submit">+ Publicar Post</button>
+            <a class="btn" href="publicacoes.html">Cancelar</a>
+          </div>
+        </form>
+        <aside class="dica">
+          <h2>Não precisa ser perfeito. Só precisa ser sincero ♡</h2>
+          <p style="margin:12px 0;font-size:13px">Conte como se sentiu, o que aconteceu ou por que esse momento ao lado da Giovana merece um lugar aqui.</p>
+          <p class="muted">✓ Escolha uma data marcante.<br>✓ Adicione uma foto se desejar.<br>✓ Interaja com curtidas e comentários no feed.</p>
+        </aside>
+      </div>
+      <p class="muted" style="margin-top:32px">Minha Medi Sina · Feito com amor para a Giovana ♡</p>
+    </main>
+  </div>
+  <script src="js/sessao.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

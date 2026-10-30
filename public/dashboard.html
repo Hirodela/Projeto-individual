@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visão geral · Minha Medi Sina ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/app-extra.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <a class="logo" href="index.html">Minha Medi Sina<small>Para Giovana ♡</small></a>
+      <a class="item ativo" href="dashboard.html">Visão geral & Métricas</a>
+      <a class="item" href="publicacoes.html">Feed de Posts</a>
+      <a class="item" href="minhas-lembrancas.html">Meus Posts</a>
+      <a class="item" href="nova-lembranca.html">Criar publicação</a>
+      <a class="item" href="perfil.html">Meu perfil</a>
+      <div class="nota">Cada post, curtida e comentário guardado com carinho para a Giovana ♡</div>
+      <a class="item" href="index.html">Sair</a>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">Nosso cantinho</p>
+          <span class="muted">Painel de métricas, curtidas e comentários</span>
+        </div>
+        <div><span class="nome-usuario-logado">Giovana ♡</span> <span class="avatar">♡</span></div>
+      </div>
+
+      <div class="page-title">
+        <div>
+          <h1>Bem-vindo(a) de volta!</h1>
+          <p>Acompanhe as curtidas ❤️, comentários 💬 e publicações do nosso mural.</p>
+        </div>
+        <a class="btn btn-primary" href="nova-lembranca.html">+ Criar Novo Post</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="muted">Total de Posts</span>
+          <b>0</b>
+          <span class="muted">Momentos publicados</span>
+        </div>
+        <div class="stat">
+          <span class="muted">Total de Curtidas ❤️</span>
+          <b>0</b>
+          <span class="muted">Carinhos recebidos</span>
+        </div>
+        <div class="stat">
+          <span class="muted">Comentários 💬</span>
+          <b>0</b>
+          <span class="muted">Mensagens nos posts</span>
+        </div>
+        <div class="stat">
+          <span class="muted">Categoria Favorita</span>
+          <b style="font-size: 22px;">—</b>
+          <span class="muted">Tema mais publicado</span>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Posts por Categoria</h3>
+          <div class="chart-container">
+            <canvas id="graficoCategorias"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3>Categorias com Mais Curtidas e Comentários</h3>
+          <div class="chart-container">
+            <canvas id="graficoEngajamento"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-head" style="margin:0">
+        <h2>Últimos Posts Publicados</h2>
+        <a href="publicacoes.html">Ir para o Feed interativo →</a>
+      </div>
+
+      <div class="tabela"></div>
+
+      <p class="muted" style="margin-top:32px">Minha Medi Sina · Feito com amor para a Giovana ♡</p>
+    </main>
+  </div>
+
+  <script src="js/sessao.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
