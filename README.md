@@ -1,24 +1,34 @@
-# 💖 Minha Medi Sina (Dedicado à Giovana)
+# Minha Medi Sina
 
-Projeto individual desenvolvido no padrão **Web-Data-Viz** (Node.js + Express + MySQL + Chart.js).
-Uma rede social afetiva e diário de memórias para **criar posts**, **curtir (❤️)**, **comentar (💬)** e acompanhar métricas em uma **Dashboard analítica**.
+Projeto individual com Node.js, Express, MySQL e páginas HTML/CSS/JavaScript.
 
-## 🚀 Como Executar o Projeto
+## O que o projeto tem
 
-1. **Banco de Dados (MySQL Workbench):**
-   - Abra e execute todo o conteúdo do ficheiro `database/schema.sql` (ou `src/database/script-tabelas.sql`).
-   - Ele cria o banco `minha_medi_sina`, as 4 tabelas (`usuario`, `post`, `curtida`, `comentario`) e já insere posts iniciais para teste imediato.
+- Cadastro e login de usuários.
+- Publicações de lembranças com título, descrição, data, categoria e privacidade.
+- Upload de fotos usando Multer.
+- Curtidas, comentários e dashboard.
 
-2. **Configurar Senha do MySQL:**
-   - Edite o ficheiro `.env.dev` na raiz do projeto e coloque a sua senha do MySQL em `DB_PASSWORD=''`.
+## Como executar
 
-3. **Instalar e Rodar:**
+1. Instale o Node.js e o MySQL.
+2. Abra `src/database/script-tabelas.sql` no MySQL Workbench e execute o script.
+3. Abra `.env.dev` e preencha `DB_PASSWORD` com a senha do seu MySQL.
+4. No terminal, dentro da pasta do projeto, execute:
+
    ```bash
    npm install
    npm start
    ```
-   Acesse no navegador: **http://localhost:3333**
 
-### Conta pronta para teste rápido:
-- **E-mail:** `giovana@amor.com`
-- **Senha:** `123456`
+5. Acesse `http://localhost:3333`.
+
+## Upload de fotos
+
+As imagens são enviadas pelo formulário e salvas em `public/uploads/`. No banco fica salvo apenas o caminho da imagem, por exemplo `/uploads/1720000000000-123456.png`.
+
+São aceitas imagens JPG, PNG e WEBP de até 5 MB.
+
+## Conta de demonstração
+
+O script SQL cria contas e publicações de exemplo. Para segurança, altere as senhas de demonstração antes de usar o projeto fora do ambiente local.

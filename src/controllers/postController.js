@@ -48,8 +48,8 @@ function publicar(req, res) {
     var descricao = req.body.descricao;
     var data = req.body.data;
     var categoria = req.body.categoria || "Fotografias";
-    var privado = req.body.privado ? 1 : 0;
-    var foto = req.body.foto || null;
+    var privado = (req.body.privado === true || req.body.privado === 1 || req.body.privado === "1") ? 1 : 0;
+    var foto = req.file ? "/uploads/" + req.file.filename : (req.body.foto || null);
 
     if (!idUsuario) {
         res.status(400).json({ erro: "Usuário não identificado! Faça login novamente." });
@@ -77,8 +77,8 @@ function editar(req, res) {
     var descricao = req.body.descricao;
     var data = req.body.data;
     var categoria = req.body.categoria || "Fotografias";
-    var privado = req.body.privado ? 1 : 0;
-    var foto = req.body.foto || null;
+    var privado = (req.body.privado === true || req.body.privado === 1 || req.body.privado === "1") ? 1 : 0;
+    var foto = req.file ? "/uploads/" + req.file.filename : (req.body.foto || null);
 
     if (!idPost || !idUsuario || !titulo || !descricao || !data) {
         res.status(400).json({ erro: "Preencha todos os campos obrigatórios para editar!" });

@@ -1,7 +1,10 @@
 var express = require("express");
 var router = express.Router();
+var multer = require("multer");
+var path = require("path");
 
 var postController = require("../controllers/postController");
+var upload = require("../config/upload");
 
 // Listar todos os posts públicos (Feed de Publicações)
 router.get("/listar", function (req, res) {
@@ -19,12 +22,12 @@ router.get("/detalhe/:idPost", function (req, res) {
 });
 
 // Criar um novo post
-router.post("/publicar", function (req, res) {
+router.post("/publicar", upload.single("foto"), function (req, res) {
     postController.publicar(req, res);
 });
 
 // Editar um post existente
-router.put("/editar/:idPost", function (req, res) {
+router.put("/editar/:idPost", upload.single("foto"), function (req, res) {
     postController.editar(req, res);
 });
 

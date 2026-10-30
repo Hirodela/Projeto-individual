@@ -619,12 +619,8 @@
                 exibirMensagem("A foto deve ter no máximo 5 MB.", true);
                 return;
             }
-            var leitor = new FileReader();
-            leitor.onload = function () {
-                fotoBase64 = leitor.result;
-                if (btnUpload) btnUpload.textContent = "Fotografia selecionada ✓";
-            };
-            leitor.readAsDataURL(arq);
+            fotoBase64 = arq;
+            if (btnUpload) btnUpload.textContent = "Fotografia selecionada ✓";
         });
 
         if (idEdicao) {
@@ -665,18 +661,23 @@
             var url = idEdicao ? "/posts/editar/" + idEdicao : "/posts/publicar";
             var metodo = idEdicao ? "PUT" : "POST";
 
+            var dadosPost = new FormData();
+            dadosPost.append("idUsuario", usuario.id);
+            dadosPost.append("titulo", titulo);
+            dadosPost.append("descricao", descricao);
+            dadosPost.append("data", data);
+            dadosPost.append("categoria", categoria);
+            dadosPost.append("privado", privado);
+
+            if (fotoBase64 instanceof File) {
+                dadosPost.append("foto", fotoBase64);
+            } else if (fotoBase64) {
+                dadosPost.append("foto", fotoBase64);
+            }
+
             fetch(url, {
                 method: metodo,
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    idUsuario: usuario.id,
-                    titulo: titulo,
-                    descricao: descricao,
-                    data: data,
-                    categoria: categoria,
-                    privado: privado,
-                    foto: fotoBase64
-                })
+                body: dadosPost
             })
                 .then(function (res) {
                     return res.json().then(function (dados) {
