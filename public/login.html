@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Entrar · Minha Medi SIna ♡</title>
+  <title>Entrar · Minha Medi Sina ♡</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/app-extra.css">
 </head>
@@ -15,12 +15,18 @@
       <div class="auth-quote">
         <h2>“Algumas histórias merecem um lugar só delas.”</h2>
         <p>E esta é a nossa maneira de guardar cada pedacinho de carinho para a Giovana ♡</p>
-        <p class="muted" style="margin-top:8px;">Conta de demonstração pronta: <b>giovana@amor.com</b> | Senha: <b>123456</b></p>
+        <div class="demo-quick-card">
+          <div>
+            <span class="muted" style="display:block;font-size:12px;">Conta de demonstração pronta:</span>
+            <b style="color:var(--vinho);font-size:13px;">giovana@amor.com</b> · Senha: <b style="color:var(--vinho);font-size:13px;">123456</b>
+          </div>
+          <button type="button" class="btn-demo-fill" data-fill-demo>✨ Preencher com 1 clique</button>
+        </div>
       </div>
     </div>
     <div class="auth-form">
       <div class="topo">
-        <a class="logo" href="index.html">Minha Medi SIna<small>Para Giovana · Nosso cantinho</small></a>
+        <a class="logo" href="index.html">Minha Medi Sina<small>Para Giovana · Nosso cantinho</small></a>
         <a href="index.html">← Voltar ao início</a>
       </div>
       <form id="login-form">
@@ -37,12 +43,12 @@
         </div>
         <div class="row">
           <label><input type="checkbox" data-mostrar> Mostrar senha</label>
+          <button type="button" class="btn-demo-fill" data-fill-demo>Usar conta demo ♡</button>
         </div>
         <button class="btn btn-primary btn-block" type="submit">Entrar</button>
         <p id="form-message" class="form-message" aria-live="polite"></p>
         <p class="center" style="margin-top:20px;font-size:13px">Ainda não tem uma conta? <a href="cadastro.html"><b>Criar conta</b></a></p>
       </form>
-      <p class="muted center">Feito com amor para a Giovana ♡</p>
     </div>
   </main>
   <script src="js/sessao.js"></script>

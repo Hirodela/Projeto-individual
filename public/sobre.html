@@ -49,8 +49,59 @@
         </figure>
       </section>
 
-      <section style="margin: 24px 0 56px;">
-        <div class="center" style="max-width: 680px; margin: 0 auto;">
+      <!-- Seção Específica: Quem é a Giovana pelos meus olhos (Editável pelo namorado) -->
+      <section class="sobre-ela-carta-section" id="secao-falar-sobre-ela">
+        <div class="sobre-ela-header">
+          <div>
+            <p class="eyebrow">Com as minhas próprias palavras</p>
+            <h2 id="sobre-ela-titulo">Quem é a Giovana pelos meus olhos ♡</h2>
+          </div>
+          <button type="button" class="btn" id="btn-editar-sobre-ela" hidden>
+            ✎ Escrever / Editar sobre ela
+          </button>
+        </div>
+
+        <!-- Visualização da Carta -->
+        <div id="sobre-ela-view">
+          <div class="sobre-ela-texto-box">
+            <div id="sobre-ela-paragrafos" class="sobre-ela-paragrafos">
+              <p>
+                Falar sobre a Giovana é falar sobre a pessoa que trouxe mais cor, calma e sentido para os meus dias. Ela tem aquele jeito único de transformar momentos simples em memórias inesquecíveis, sempre com um olhar doce, uma risada que contagia qualquer ambiente e um coração que não cabe no peito.
+              </p>
+              <p>
+                Admiro a força, a dedicação e a sensibilidade com que ela encara a vida. Estar ao lado dela me faz querer evoluir todos os dias, porque a Giovana inspira amor, parceria de verdade e a certeza de que encontrei a pessoa certa para dividir todos os sonhos.
+              </p>
+            </div>
+            <div class="sobre-ela-assinatura" id="sobre-ela-assinatura">
+              Com todo o meu amor e admiração, sempre seu ♡
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulário de Edição (aparece ao clicar em Editar quando logado) -->
+        <form id="form-sobre-ela" class="sobre-ela-edit-form" hidden>
+          <p class="eyebrow" style="margin-bottom: 10px;">Personalize sua declaração sobre a Giovana</p>
+          <div class="field">
+            <label for="inp-sobre-titulo">Título da seção *</label>
+            <input type="text" id="inp-sobre-titulo" required maxlength="100" />
+          </div>
+          <div class="field">
+            <label for="inp-sobre-texto">O que você quer falar sobre ela * (use quebras de linha para novos parágrafos)</label>
+            <textarea id="inp-sobre-texto" rows="6" required placeholder="Escreva com carinho tudo o que a Giovana representa para você..."></textarea>
+          </div>
+          <div class="field">
+            <label for="inp-sobre-assinatura">Assinatura final *</label>
+            <input type="text" id="inp-sobre-assinatura" required maxlength="90" />
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 12px;">
+            <button type="button" class="btn" id="btn-cancelar-sobre-ela">Cancelar</button>
+            <button type="submit" class="btn btn-primary">💾 Salvar declaração ♡</button>
+          </div>
+        </form>
+      </section>
+
+      <section style="margin: 48px 0 56px;">
+        <div class="center" style="max-width: 680px; margin: 0 auto 28px;">
           <p class="eyebrow">O que faz dela única</p>
           <h2>Pequenos detalhes que eu amo na Giovana</h2>
           <p class="muted" style="margin-top: 8px;">
@@ -58,7 +109,40 @@
           </p>
         </div>
 
-        <div class="qualidades-grid">
+        <!-- Formulário para adicionar novo card de qualidade (visível quando logado) -->
+        <div id="qualidade-form-section" class="quick-post-box" style="max-width: 820px; margin: 0 auto 32px;" hidden>
+          <p class="eyebrow" style="margin-bottom: 8px;">Novo detalhe especial</p>
+          <h3 style="margin-bottom: 14px;">Adicionar um novo card sobre a Giovana ♡</h3>
+          <form id="qualidade-form">
+            <div class="dois">
+              <div class="field">
+                <label for="qual-icone">Ícone / Emoji *</label>
+                <select id="qual-icone">
+                  <option value="💖">💖 Coração brilhante</option>
+                  <option value="✨">✨ Estrelinhas</option>
+                  <option value="🌷">🌷 Flor delicada</option>
+                  <option value="🎶">🎶 Nossa sintonia</option>
+                  <option value="☀️">☀️ Sol que ilumina</option>
+                  <option value="🦋">🦋 Borboletas</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="qual-titulo">Título da Qualidade *</label>
+                <input id="qual-titulo" type="text" placeholder="Ex: O abraço que acalma tudo" required maxlength="60" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="qual-descricao">Por que eu amo esse detalhe *</label>
+              <textarea id="qual-descricao" style="min-height: 80px;" placeholder="Descreva com carinho esse detalhe especial da Giovana..." required maxlength="300"></textarea>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+              <p id="qual-message" class="form-message" style="margin-top: 0;" aria-live="polite"></p>
+              <button type="submit" class="btn btn-primary">+ Adicionar Card ♡</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="qualidades-grid" id="qualidades-list">
           <div class="qualidade-card">
             <div class="qualidade-icon">✨</div>
             <h3>O Sorriso que Ilumina</h3>
@@ -80,6 +164,7 @@
               Das piadas internas aos planos para o futuro, conversar com a Giovana é sentir que estamos sempre em casa.
             </p>
           </div>
+          <div id="qualidades-custom-cards" style="display: contents;"></div>
         </div>
       </section>
 
@@ -119,9 +204,6 @@
           <a href="nossa-historia.html">Nossa História</a>
           <a href="publicacoes.html">Posts</a>
         </nav>
-      </div>
-      <div class="container muted" style="margin-top: 16px">
-        Feito com amor para a Giovana ♡ · Projeto Individual
       </div>
     </footer>
 

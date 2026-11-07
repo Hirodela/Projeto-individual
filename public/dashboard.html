@@ -19,8 +19,7 @@
       <a class="item" href="minhas-lembrancas.html">Meus Posts</a>
       <a class="item" href="nova-lembranca.html">Criar publicação</a>
       <a class="item" href="perfil.html">Meu perfil</a>
-      <div class="nota">Cada post, curtida e comentário guardado com carinho para a Giovana ♡</div>
-      <a class="item" href="index.html">Sair</a>
+      <a class="item" href="index.html" style="margin-top: auto;">Sair</a>
     </aside>
 
     <main class="main">
@@ -32,60 +31,134 @@
         <div><span class="nome-usuario-logado">Giovana ♡</span> <span class="avatar">♡</span></div>
       </div>
 
-      <div class="page-title">
-        <div>
-          <h1>Bem-vindo(a) de volta!</h1>
-          <p>Acompanhe as curtidas ❤️, comentários 💬 e publicações do nosso mural.</p>
+      <div class="stats">
+        <div class="stat dash-stat-card">
+          <div class="stat-top">
+            <span class="muted">Total de Posts</span>
+            <span class="stat-icon">📸</span>
+          </div>
+          <b id="kpi-total-posts">0</b>
+          <span class="muted" id="kpi-sub-posts">Momentos publicados</span>
         </div>
-        <a class="btn btn-primary" href="nova-lembranca.html">+ Criar Novo Post</a>
+        <div class="stat dash-stat-card">
+          <div class="stat-top">
+            <span class="muted">Total de Curtidas</span>
+            <span class="stat-icon">❤️</span>
+          </div>
+          <b id="kpi-total-curtidas">0</b>
+          <span class="muted" id="kpi-sub-curtidas">Carinhos recebidos</span>
+        </div>
+        <div class="stat dash-stat-card">
+          <div class="stat-top">
+            <span class="muted">Comentários</span>
+            <span class="stat-icon">💬</span>
+          </div>
+          <b id="kpi-total-comentarios">0</b>
+          <span class="muted" id="kpi-sub-comentarios">Mensagens nos posts</span>
+        </div>
+        <div class="stat dash-stat-card">
+          <div class="stat-top">
+            <span class="muted">Categoria Favorita</span>
+            <span class="stat-icon">👑</span>
+          </div>
+          <b id="kpi-categoria-fav" style="font-size: 22px;">—</b>
+          <span class="muted" id="kpi-sub-categoria">Tema mais publicado</span>
+        </div>
       </div>
 
-      <div class="stats">
-        <div class="stat">
-          <span class="muted">Total de Posts</span>
-          <b>0</b>
-          <span class="muted">Momentos publicados</span>
+      <!-- Destaques Românticos: Post Mais Amado + Termômetro do Nosso Cantinho -->
+      <div class="dash-highlights-grid">
+        <div class="dash-highlight-card">
+          <div class="dash-card-head">
+            <div>
+              <p class="eyebrow">Favorito do mural</p>
+              <h3>🏆 Lembrança Mais Amada</h3>
+            </div>
+            <span class="tag">Destaque ♡</span>
+          </div>
+          <div id="dash-post-destaque" class="dash-featured-body">
+            <p class="muted">Carregando lembrança em destaque...</p>
+          </div>
         </div>
-        <div class="stat">
-          <span class="muted">Total de Curtidas ❤️</span>
-          <b>0</b>
-          <span class="muted">Carinhos recebidos</span>
-        </div>
-        <div class="stat">
-          <span class="muted">Comentários 💬</span>
-          <b>0</b>
-          <span class="muted">Mensagens nos posts</span>
-        </div>
-        <div class="stat">
-          <span class="muted">Categoria Favorita</span>
-          <b style="font-size: 22px;">—</b>
-          <span class="muted">Tema mais publicado</span>
+
+        <div class="dash-highlight-card">
+          <div class="dash-card-head">
+            <div>
+              <p class="eyebrow">Termômetro do amor</p>
+              <h3>💖 Nossos Sonhos & História</h3>
+            </div>
+            <span class="tag" id="dash-nivel-amor">Cheio de carinho ✨</span>
+          </div>
+          <div class="dash-meters-list">
+            <div class="dash-meter-item">
+              <div class="dash-meter-top">
+                <span>✨ Nossos Sonhos (<a href="nossa-historia.html" style="color:var(--vinho);text-decoration:underline;">Ver lista</a>)</span>
+                <b id="dash-meta-sonhos-txt">0 realizados</b>
+              </div>
+              <div class="sonhos-barra-bg">
+                <div class="sonhos-barra-fill" id="dash-meta-sonhos-bar" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <div class="dash-mini-stats-row">
+              <a href="nossa-historia.html" class="dash-mini-pill">
+                <span>📖</span>
+                <div>
+                  <b id="dash-count-capitulos">Capítulos</b>
+                  <small>Em Nossa História</small>
+                </div>
+              </a>
+              <a href="nossa-historia.html#lugares-section" class="dash-mini-pill">
+                <span>✈️</span>
+                <div>
+                  <b id="dash-count-lugares">Lugares</b>
+                  <small>Para irmos juntos</small>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="charts-grid">
         <div class="chart-card">
-          <h3>Posts por Categoria</h3>
+          <div class="dash-card-head" style="margin-bottom: 12px;">
+            <div>
+              <p class="eyebrow">Distribuição do mural</p>
+              <h3 style="margin:0;">Posts por Categoria</h3>
+            </div>
+            <span class="tag" id="chart-cat-resumo">Categorias</span>
+          </div>
           <div class="chart-container">
             <canvas id="graficoCategorias"></canvas>
           </div>
         </div>
         <div class="chart-card">
-          <h3>Categorias com Mais Curtidas e Comentários</h3>
+          <div class="dash-card-head" style="margin-bottom: 12px;">
+            <div>
+              <p class="eyebrow">Interações recebidas</p>
+              <h3 style="margin:0;">Curtidas e Comentários por Tema</h3>
+            </div>
+            <span class="tag" id="chart-eng-resumo">Engajamento</span>
+          </div>
           <div class="chart-container">
             <canvas id="graficoEngajamento"></canvas>
           </div>
         </div>
       </div>
 
-      <div class="sec-head" style="margin:0">
-        <h2>Últimos Posts Publicados</h2>
-        <a href="publicacoes.html">Ir para o Feed interativo →</a>
+      <div class="sec-head dash-table-head" style="margin:0">
+        <div>
+          <h2>Últimos Posts Publicados</h2>
+          <p class="muted" style="font-size: 13px; margin-top: 2px;">Gerencie ou filtre rapidamente as lembranças do mural</p>
+        </div>
+        <div class="dash-table-controls">
+          <input type="search" id="dash-busca-posts" placeholder="🔎 Buscar post ou autor..." />
+          <a class="btn" href="publicacoes.html">Ir para o Feed →</a>
+        </div>
       </div>
 
       <div class="tabela"></div>
-
-      <p class="muted" style="margin-top:32px">Minha Medi Sina · Feito com amor para a Giovana ♡</p>
     </main>
   </div>
 

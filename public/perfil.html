@@ -18,8 +18,7 @@
       <a class="item" href="minhas-lembrancas.html">Meus Posts</a>
       <a class="item" href="nova-lembranca.html">Criar publicação</a>
       <a class="item ativo" href="perfil.html">Meu perfil</a>
-      <div class="nota">Um espaço para lembrar do que faz o coração sorrir.</div>
-      <a class="item" href="index.html">Sair</a>
+      <a class="item" href="index.html" style="margin-top: auto;">Sair</a>
     </aside>
     <main class="main">
       <div class="topbar">
@@ -32,15 +31,20 @@
       <div class="page-title">
         <div>
           <h1>Meu Perfil</h1>
-          <p>Como o seu nome aparece nos posts e comentários do mural.</p>
+          <p>Como o seu nome e a sua foto aparecem no nosso cantinho.</p>
         </div>
       </div>
       <form class="box" id="profile-form" style="max-width:620px">
-        <div style="display:flex;gap:20px;align-items:center;margin-bottom:24px">
-          <span class="avatar avatar-usuario" style="width:72px;height:72px;font-size:26px;margin:0">♡</span>
+        <div style="display:flex;gap:20px;align-items:center;margin-bottom:24px;flex-wrap:wrap">
+          <span class="avatar avatar-usuario" id="profile-avatar-preview" title="Clique para trocar sua foto" style="width:84px;height:84px;font-size:28px;margin:0;cursor:pointer">♡</span>
           <div>
             <h3 class="nome-usuario-logado">Giovana ♡</h3>
-            <p class="hint">Participante do mural Minha Medi Sina</p>
+            <p class="hint" style="margin-bottom:10px">Participante do mural Minha Medi Sina</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button type="button" class="btn" id="btn-trocar-foto-perfil" style="min-height:36px;padding:6px 14px;font-size:12.5px">📷 Trocar foto de perfil</button>
+              <button type="button" class="btn" id="btn-remover-foto-perfil" style="min-height:36px;padding:6px 14px;font-size:12.5px" hidden>✕ Remover foto</button>
+            </div>
+            <input type="file" id="input-foto-perfil" accept="image/jpeg,image/png,image/webp" hidden>
           </div>
         </div>
         <div class="field">
@@ -57,7 +61,6 @@
           <a class="btn" href="dashboard.html">Voltar</a>
         </div>
       </form>
-      <p class="muted" style="margin-top:32px">Minha Medi Sina · Feito com amor para a Giovana ♡</p>
     </main>
   </div>
   <script src="js/sessao.js"></script>

@@ -4,7 +4,8 @@ function obterMetricas(req, res) {
     Promise.all([
         dashboardModel.buscarKpis(),
         dashboardModel.buscarPostsPorCategoria(),
-        dashboardModel.buscarTopPostsEngajamento()
+        dashboardModel.buscarTopPostsEngajamento(),
+        dashboardModel.buscarPostMaisAmado()
     ])
         .then(function (resultados) {
             var kpis = resultados[0][0] || {
@@ -15,11 +16,13 @@ function obterMetricas(req, res) {
             };
             var porCategoria = resultados[1] || [];
             var topPosts = resultados[2] || [];
+            var postMaisAmado = (resultados[3] && resultados[3][0]) ? resultados[3][0] : null;
 
             res.status(200).json({
                 kpis: kpis,
                 porCategoria: porCategoria,
-                topPosts: topPosts
+                topPosts: topPosts,
+                postMaisAmado: postMaisAmado
             });
         })
         .catch(function (erro) {
